@@ -1,9 +1,11 @@
+#pragma once
 #include <cassert>
 #include <cstddef>
 #include <string>
 #include <utility>
 #include <initializer_list>
 #include <type_traits>
+#include <algorithm>
 
 template <typename T>
 class SingleLinkedList {
@@ -228,23 +230,4 @@ private:
 template <typename T>
 void swap(SingleLinkedList<T>& lhs, SingleLinkedList<T>& rhs) noexcept {
     lhs.swap(rhs);
-}
-
-void Test0() {
-    using namespace std;
-    {
-        const SingleLinkedList<int> empty_int_list;
-        assert(empty_int_list.GetSize() == 0u);
-        assert(empty_int_list.IsEmpty());
-    }
-
-    {
-        const SingleLinkedList<string> empty_string_list;
-        assert(empty_string_list.GetSize() == 0u);
-        assert(empty_string_list.IsEmpty());
-    }
-}
-
-int main() {
-    Test0();
 }
